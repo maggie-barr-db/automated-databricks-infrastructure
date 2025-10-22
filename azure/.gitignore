@@ -1,0 +1,15 @@
+# Terraform local state and overrides
+.terraform/
+# Commit lock file to ensure provider versions are pinned
+!.terraform.lock.hcl
+terraform.tfstate
+terraform.tfstate.backup
+crash.log
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# Local variables (do not commit secrets)
+terraform.tfvars
+*.auto.tfvars

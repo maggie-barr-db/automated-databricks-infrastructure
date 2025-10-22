@@ -1,0 +1,13 @@
+project_name            = "maggieinfra"
+location                = "eastus2"
+environment             = "dev"
+storage_container_name  = "data"
+databricks_sku          = "premium"
+public_network_access_enabled = true
+
+tags = {
+  owner = "maggie.barrett"
+  team  = "data-platform"
+}
+
+
