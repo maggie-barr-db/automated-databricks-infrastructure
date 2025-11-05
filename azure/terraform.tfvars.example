@@ -1,6 +1,7 @@
-project_name            = "maggieinfra"
+project_name            = "mbarrettdemos"
 location                = "eastus2"
 environment             = "dev"
+existing_resource_group_name = "fe-shared-amer-001"  # deploy into existing FE shared RG
 storage_container_name  = "data"
 databricks_sku          = "premium"
 public_network_access_enabled = true
@@ -9,5 +10,4 @@ tags = {
   owner = "maggie.barrett"
   team  = "data-platform"
 }
-
 

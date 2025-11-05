@@ -17,14 +17,16 @@ az login
 az account set --subscription "<SUBSCRIPTION_NAME_OR_ID>"
 ```
 
-2) Configure variables (copy example):
+2) Configure variables (copy example) and set the existing Resource Group name:
 
 ```bash
 cp terraform.tfvars.example terraform.tfvars
 # edit terraform.tfvars as needed (project_name must be short and lowercase-friendly)
+# set existing_resource_group_name to one of: fe-shared-amer-001, fe-shared-apj-001, fe-shared-emea-001, fe-shared-japan-001
+# set variables as needed (no Databricks account-level config required)
 ```
 
-3) Initialize, plan, and apply:
+3) Initialize, plan, and apply (deploys into the existing RG; does not create a new RG):
 
 ```bash
 terraform init
@@ -90,5 +92,10 @@ terraform destroy -auto-approve
 - The storage account name is auto-generated from `project_name` with a random suffix to satisfy Azure naming rules.
 - The Databricks workspace is created with public network access enabled by default. You can change `public_network_access_enabled` to `false` and integrate with a VNet if needed.
 - This configuration does not create Databricks resources (clusters, jobs) and does not mint PATs. Prefer AAD auth in the CLI.
+
+### Unity Catalog
+
+This baseline does not configure a metastore. If your workspace already has a metastore assigned by your platform team, you can create catalogs via the UI or CLI. If no metastore is assigned, ask your platform team to assign one.
+
 
 

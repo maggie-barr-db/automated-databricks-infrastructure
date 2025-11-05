@@ -1,5 +1,5 @@
 output "resource_group_name" {
-  value       = azurerm_resource_group.rg.name
+  value       = data.azurerm_resource_group.rg.name
   description = "Azure Resource Group name."
 }
 
@@ -37,5 +37,7 @@ output "databricks_workspace_url" {
   value       = azurerm_databricks_workspace.workspace.workspace_url
   description = "Workspace URL to use with the Databricks CLI."
 }
+
+ 
 
 

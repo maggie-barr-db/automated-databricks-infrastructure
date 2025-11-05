@@ -41,4 +41,11 @@ variable "public_network_access_enabled" {
   default     = true
 }
 
+## Removed UC-specific variables to avoid requiring account-level permissions
+
+variable "existing_resource_group_name" {
+  description = "Name of the existing Azure Resource Group to deploy into (e.g., fe-shared-amer-001)."
+  type        = string
+}
+
 
